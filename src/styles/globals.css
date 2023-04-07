@@ -29,7 +29,7 @@ body {
 /* Mobile */
 
 /* Tablet & up */
-@media (min-width: 701px) {
+@media (min-width: 768px) {
   main {
     min-height: calc(100vh - 168px)
   }
