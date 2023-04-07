@@ -9,6 +9,10 @@
   font-style: normal;
 }
 
+main {
+  min-height: calc(100vh - 200px)
+}
+
 body {
   font-family: 'Medieval', sans-serif;
   width: 100%;
@@ -24,14 +28,11 @@ body {
 
 /* Mobile */
 
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-
-}
-
-/* Desktop */
-@media (min-width: 1121px) {
-
+/* Tablet & up */
+@media (min-width: 701px) {
+  main {
+    min-height: calc(100vh - 168px)
+  }
 }
 
 @media (prefers-color-scheme: dark) {
