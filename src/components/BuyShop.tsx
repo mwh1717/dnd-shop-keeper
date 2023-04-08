@@ -26,8 +26,6 @@ function RandomMagicItems() {
         const singleItemResult = await fetch(`https://www.dnd5eapi.co${chosenItem.url}`);
         const singleData = await singleItemResult.json();
         randomItems.push(singleData);
-
-        console.log(singleData);
       }
       setItems(randomItems);
     }
