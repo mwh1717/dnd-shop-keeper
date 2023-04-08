@@ -6,7 +6,7 @@ interface Item {
   index: string;
   name: string;
   url: string;
-  rarity: { name: string }[];
+  rarity: { name: string };
   desc: [ string ];
 }
 

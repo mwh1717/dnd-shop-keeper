@@ -23,7 +23,7 @@ const GlobalHeader = () => {
       </div>
       <div className='flex justify-center text-xl md:text-3xl mt-1 md:mt-0'>
         <button className={buttonCss}>Buy</button>
-        <button className={buttonCss}>Sell</button>
+        <button className={buttonCss}>Settings</button>
       </div>
     </div>
   )

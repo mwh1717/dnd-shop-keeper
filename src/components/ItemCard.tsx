@@ -1,13 +1,11 @@
 import React, { useRef } from 'react';
 
 interface Details {
+  index: string;
   name: string;
+  url: string;
   rarity: { name: string };
-  desc: [string];
-}
-
-const removeItem = (target: HTMLDivElement) => {
-  target.remove();
+  desc: [ string ];
 }
 
 const ItemCard = (props: Details) => {

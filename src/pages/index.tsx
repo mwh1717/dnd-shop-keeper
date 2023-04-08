@@ -12,14 +12,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='flex flex-col items-center pt-10'>
-        <div className={`instructions text-2xl ${instructionsAndShopSmall}`}>
+      <main className='flex flex-col xl:flex-row xl:items-start xl:p-10 items-center pt-10'>
+        <div className={`instructions text-center text-2xl ${instructionsAndShopSmall} xl:w-1/4`}>
         Greetings, weary travelers! Welcome to my humble shop. I have a wide range of magical items that you might find useful during your journey.
         Choose quickly though, my wares change often!
         I also offer fair prices for any goods that you may want to sell. Do you have anything to trade?
         Allow me to take a look and assess a fair trade.
         </div>
-        <div className='w-11/12'>
+        <div className='w-11/12 xl:w-3/4 xl:ml-10'>
           <BuyShop />
         </div>
       </main>
