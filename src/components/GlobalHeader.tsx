@@ -4,6 +4,7 @@ import Image from 'next/image';
 const GlobalHeader = () => {
 
   const buttonCss = 'rounded bg-yellow-600 py-2 md:py-3 px-10 m-2 hover:bg-red-400'
+  const disabled = 'rounded py-2 md:py-3 px-10 m-2 cursor-not-allowed bg-gray-200'
 
   return (
     <div className='global-header flex flex-col md:flex-row md:justify-between bg-yellow-950 shadow text-white w-full p-4'>
@@ -23,7 +24,7 @@ const GlobalHeader = () => {
       </div>
       <div className='flex justify-center text-xl md:text-3xl mt-1 md:mt-0'>
         <button className={buttonCss}>Buy</button>
-        <button className={buttonCss}>Settings</button>
+        <button className={disabled}>Settings</button>
       </div>
     </div>
   )
