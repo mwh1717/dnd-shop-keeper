@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import BuyShop from '@/components/BuyShop'
 
-const instructionsAndShopSmall = 'border-2 border-black rounded w-11/12 p-5 mb-5'
+const instructionsAndShopSmall = 'border-4 border-black rounded w-11/12 p-5 mb-5'
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
         I also offer fair prices for any goods that you may want to sell. Do you have anything to trade?
         Allow me to take a look and assess a fair trade.
         </div>
-        <div className={`shop ${instructionsAndShopSmall}`}>
+        <div className='w-11/12'>
           <BuyShop />
         </div>
       </main>

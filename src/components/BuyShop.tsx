@@ -1,10 +1,13 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import ItemCard from './ItemCard';
 
 interface Item {
   index: string;
   name: string;
   url: string;
+  rarity: { name: string }[];
+  desc: [ string ];
 }
 
 function RandomMagicItems() {
@@ -17,12 +20,14 @@ function RandomMagicItems() {
       const dataArray: Item[] = allData.results;
 
       const randomItems: Item[] = [];
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 6; i++) {
         const randomIndex: number = Math.floor(Math.random() * dataArray.length);
         const chosenItem = dataArray[randomIndex];
         const singleItemResult = await fetch(`https://www.dnd5eapi.co${chosenItem.url}`);
         const singleData = await singleItemResult.json();
         randomItems.push(singleData);
+
+        console.log(singleData);
       }
       setItems(randomItems);
     }
@@ -31,14 +36,13 @@ function RandomMagicItems() {
   }, []);
 
   return (
-    <div>
-      <h2>Random Magic Items</h2>
-      <ul>
-        {items.map((item) => (
-          <li key={item.index}>{item.name}</li>
-        ))}
-      </ul>
-    </div>
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}>
+          <ItemCard {...item} />
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -46,7 +50,7 @@ function RandomMagicItems() {
 const BuyShop = () => {
 
   return (
-    <div className=''>
+    <div className='cards-wrapper'>
       <RandomMagicItems />
     </div>
   )
