@@ -1,8 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import ItemCard from './ItemCard';
-import { useContext } from 'react';
-import { CheckboxContext } from '@/components/Checkbox';
 
 interface Item {
   index: string;
@@ -48,9 +46,6 @@ function RandomMagicItems() {
 
 
 const BuyShop = () => {
-
-  const test = useContext(CheckboxContext);
-  console.log('status:', test);
 
   return (
     <div className='cards-wrapper'>

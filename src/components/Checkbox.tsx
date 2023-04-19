@@ -1,42 +1,31 @@
 import React from 'react';
-import { useState, createContext, useContext } from 'react';
+import { useContext } from 'react';
+import CheckboxContext from './CheckboxContent';
 
 interface Details {
   text: string;
   id: string;
-  state: boolean
 }
 
-type CheckboxContextType = {
-  [key: string]: boolean;
-}
+const Checkbox: React.FC<Details> = ({text, id}) => {
 
-export const CheckboxContext = createContext<CheckboxContextType | null>(null);
-
-const Checkbox = (props: Details) => {
-
-  const [checkboxState, setCheckboxState] = useState<CheckboxContextType>({});
+  const { checkboxes, setCheckbox } = useContext(CheckboxContext);
 
   function handleCheckboxChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const checkboxId = event.target.id;
     const isChecked = event.target.checked
-    setCheckboxState(() => ({
-      [checkboxId]: isChecked
-    }));
+    setCheckbox(id, isChecked);
 
-    console.log(checkboxState)
+    console.log(checkboxes)
   }
 
   return (
-    <CheckboxContext.Provider value={checkboxState}>
       <div className='checkbox-wrapper pt-5'>
         <label className='text-2xl'>
-          <input className='mr-2 w-5 h-5' id={`${props.id}`}
-            type="checkbox" checked={checkboxState[props.id] || false} onChange={handleCheckboxChange} />
-          {props.text}
+          <input className='mr-2 w-5 h-5' id={id}
+            type="checkbox" checked={checkboxes[id] || false} onChange={handleCheckboxChange} />
+          {text}
         </label>
       </div>
-    </CheckboxContext.Provider>
   )
 }
 
