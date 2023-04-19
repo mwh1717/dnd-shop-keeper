@@ -10,8 +10,10 @@ interface Item {
   desc: [ string ];
 }
 
-function RandomMagicItems() {
+function RandomMagicItems({ checkboxState }) {
   const [items, setItems] = useState<Item[]>([]);
+
+  console.log(checkboxState)
 
   useEffect(() => {
     async function fetchData() {

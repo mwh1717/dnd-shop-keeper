@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 
 const GlobalHeader = () => {
@@ -23,8 +24,8 @@ const GlobalHeader = () => {
         </div>
       </div>
       <div className='flex justify-center text-xl md:text-3xl mt-1 md:mt-0'>
-        <button className={buttonCss}>Buy</button>
-        <button className={disabled}>Settings</button>
+        <Link href='/' className={buttonCss}>Buy</Link>
+        <Link href='/settings' className={buttonCss}>Settings</Link>
       </div>
     </div>
   )
