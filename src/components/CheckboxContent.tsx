@@ -14,12 +14,20 @@ const CheckboxContext = createContext<CheckboxContextType>({
   setCheckbox: () => {},
 });
 
+const setCheckboxInitialState = () => {
+  const checkboxList = document.querySelectorAll('.checkbox-wrapper');
+  console.log(checkboxList)
+}
+
 export const CheckboxProvider: React.FC<CheckboxProviderProps> = ({ children }) => {
   const [checkboxes, setCheckboxes] = useState<{ [id: string]: boolean }>({});
 
+  setCheckboxInitialState();
+
   const setCheckbox = (id: string, isChecked: boolean) => {
-    setCheckboxes(prevState => ({
-      ...prevState,
+    console.log('checkboxes: ', checkboxes)
+    setCheckboxes((checkboxes) => ({
+      ...checkboxes,
       [id]: isChecked,
     }));
   };
