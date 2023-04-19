@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import ItemCard from './ItemCard';
+import { useContext } from 'react';
+import { CheckboxContext } from '@/components/Checkbox';
 
 interface Item {
   index: string;
@@ -10,10 +12,8 @@ interface Item {
   desc: [ string ];
 }
 
-function RandomMagicItems({ checkboxState }) {
+function RandomMagicItems() {
   const [items, setItems] = useState<Item[]>([]);
-
-  console.log(checkboxState)
 
   useEffect(() => {
     async function fetchData() {
@@ -48,6 +48,9 @@ function RandomMagicItems({ checkboxState }) {
 
 
 const BuyShop = () => {
+
+  const test = useContext(CheckboxContext);
+  console.log('status:', test);
 
   return (
     <div className='cards-wrapper'>
